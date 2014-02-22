@@ -12,11 +12,18 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    jdialog.cpp \
+    metadatadialog.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    jdialog.h \
+    metadatadialog.h
 
 RESOURCES += \
     resources.qrc
+
+FORMS += \
+    metadatadialog.ui
 
 

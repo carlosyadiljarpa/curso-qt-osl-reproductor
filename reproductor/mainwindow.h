@@ -10,6 +10,10 @@
 #include <QSlider>
 #include <QFileDialog>
 #include <QToolButton>
+#include <QMenuBar>
+#include <QMenu>
+#include "metadatadialog.h"
+
 
 class MainWindow : public QMainWindow
 {
@@ -20,16 +24,24 @@ public:
     ~MainWindow();
     
 private:
-    QGridLayout*        lytMain_;
-    QWidget*            wgtMain_;
-    QMediaPlayer*       mediaPlayer_;
-    QSlider*            playerSlider_;
-    QVideoWidget*       videoWidget_;
-    QSlider*            volumeSlider_;
-    QToolButton*        btnOpen_;
-    QToolButton*        btnPlay_;
-    QToolButton*        btnPause_;
-    QToolButton*        btnStop_;
+    QGridLayout*        lytMain_; //declarar widget
+    QWidget*            wgtMain_; //declarar widget
+    QMediaPlayer*       mediaPlayer_; //declarar widget
+    QSlider*            playerSlider_; //declarar widget
+    QVideoWidget*       videoWidget_; //declarar widget
+    QSlider*            volumeSlider_; //declarar widget
+    QToolButton*        btnOpen_; //declarar widget
+    QToolButton*        btnPlay_; //declarar widget
+    QToolButton*        btnPause_; //declarar widget
+    QToolButton*        btnStop_; //declarar widget
+    QMenuBar*           mainMenu_;
+    QMenu*              mnuArchivo_;
+    QMenu*              mnuAyuda_;
+    QMenu*              mnuVer_;
+    QAction*            actArchivoAbrir_;
+    QAction*            actAyuda_;
+    QAction*            actmetadata_;
+
 
 private slots:
     void onOpen();
@@ -37,6 +49,8 @@ private slots:
     void onDurationChanged(qint64 duration);
     void onPositionChanged(qint64 position);
     void onVolumeChanged(int volume);
+    void acercaDe();
+    void ver();
 
 };
 
